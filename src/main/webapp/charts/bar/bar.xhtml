@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ct="http://www.chartistjsf.org/charts"
+	xmlns:p="http://primefaces.org/ui" xmlns:pretty="http://ocpsoft.com/prettyfaces">
+
+	<div class="jumbotron">
+		<pretty:link mappingId="bar" styleClass="btn-floating btn-large waves-effect waves-light pull-right"
+			rendered="#{preview}" title="How to Play">
+			<i class="mdi-hardware-gamepad"></i>
+		</pretty:link>
+
+		<h2>Bar Chart</h2>
+		<h:form id="barFormId">
+			<ct:chart id="barChart" styleClass="myClass" type="bar" model="#{chartDataBean.barChartModel}" widgetVar="barChart">
+				<p:ajax event="itemSelect" listener="#{chartDataBean.barItemSelect}" update="barChartMessage" />
+			</ct:chart>
+
+			<p:message id="barChartMessage" for="barChart" showDetail="true" />
+		</h:form>
+	</div>
+
+</ui:composition>

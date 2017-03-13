@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ct="http://www.chartistjsf.org/charts"
+	xmlns:p="http://primefaces.org/ui" xmlns:pretty="http://ocpsoft.com/prettyfaces">
+	<div class="jumbotron">
+
+		<pretty:link mappingId="line" styleClass="btn-floating btn-large waves-effect waves-light pull-right" rendered="#{preview}" title="How to Play">
+			<i class="mdi-hardware-gamepad"></i>
+         </pretty:link>
+
+		<h2>Line Chart</h2>
+		<h:form id="lineformId">
+			<ct:chart id="lineChart" type="line" model="#{chartDataBean.lineModel}">
+				<p:ajax event="itemSelect" listener="#{chartDataBean.itemSelect}" update="lineChartMessage" />
+			</ct:chart>
+
+			<p:message id="lineChartMessage" for="lineChart" showDetail="true" />
+		</h:form>
+	</div>
+
+	<script>
+            myLabelInterpolationFnc = function(value, index) {
+              return "Work " + value;
+            }       
+
+            myResponsiveOptions = [
+               ['screen and (min-width: 641px) and (max-width: 1024px)', {
+                 axisX: {
+                   labelInterpolationFnc: function(value) {
+                     return 'Week ' + value;
+                   }
+                 }
+               }],
+               ['screen and (max-width: 640px)', {
+                 showLine: false,
+                 axisX: {
+                   labelInterpolationFnc: function(value) {
+                     return 'W' + value;
+                   }
+                 }
+               }]
+             ];
+                                               
+     </script>
+</ui:composition>

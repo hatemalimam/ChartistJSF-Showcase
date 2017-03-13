@@ -1,0 +1,81 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ct="http://www.chartistjsf.org/charts"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/templates/vox/main.xhtml">
+	<ui:define name="content">
+		<script>$(function() {Showcase.optionsFormEvents(); $('select').material_select();});</script>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-content">Responsive</div>
+					<h:form id="optionsForm">
+						<p:remoteCommand name="submitForm" actionListener="#{chartDataBean.pieCollectData}" process="@this"
+							update=":pieFormId:pieChart"></p:remoteCommand>
+						<div class="card-action">
+							<div class="input-field col s12">
+								<select name="aspectRatio">
+									<option value="GOLDEN_SECTION" selected="">GOLDEN_SECTION</option>
+									<option value="SQUARE">SQUARE</option>
+									<option value="MINOR_SECOND">MINOR_SECOND</option>
+									<option value="MAJOR_SECOND">MAJOR_SECOND</option>
+									<option value="MINOR_THIRD">MINOR_THIRD</option>
+									<option value="MAJOR_THIRD">MAJOR_THIRD</option>
+									<option value="PERFECT_FOURTH">PERFECT_FOURTH</option>
+									<option value="PERFECT_FIFTH">PERFECT_FIFTH</option>
+									<option value="MINOR_SIXTH">MINOR_SIXTH</option>
+									<option value="MAJOR_SIXTH">MAJOR_SIXTH</option>
+									<option value="MINOR_SEVENTH">MINOR_SEVENTH</option>
+									<option value="MAJOR_SEVENTH">MAJOR_SEVENTH</option>
+									<option value="OCTAVE">OCTAVE</option>
+									<option value="MAJOR_TENTH">MAJOR_TENTH</option>
+									<option value="MAJOR_ELEVENTH">MAJOR_ELEVENTH</option>
+									<option value="MAJOR_TWELFTH">MAJOR_TWELFTH</option>
+									<option value="DOUBLE_OCTAVE">DOUBLE_OCTAVE</option>
+								</select>
+								<label>Aspect Ratio</label>
+							</div>
+						</div>
+						<div class="card-content">Options</div>
+						<div class="card-action">
+							<p>
+								<input name="showTooltip" type="checkbox" class="filled-in" id="showTooltip" checked="checked"> </input>
+								<label for="showTooltip">showTooltip</label>
+							</p>
+							<p>
+								<input name="showLabel" type="checkbox" class="filled-in" id="showLabel" checked="checked"> </input>
+								<label for="showLabel">showLabel</label>
+							</p>
+							<p>
+								<input name="donut" type="checkbox" class="filled-in" id="donut"> </input>
+								<label for="donut">donut</label>
+							</p>
+						</div>
+					</h:form>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<ui:include src="pie.xhtml" />
+			</div>
+		</div>
+
+
+		<div class="jumbotron">
+			<ul class="nav nav-tabs" data-tabs="tabs">
+				<li role="presentation" class="active">
+					<a href="#xhtml" data-toggle="tab">pie.xhtml</a>
+				</li>
+				<li role="presentation">
+					<a href="#java" data-toggle="tab">ChartDataBean.java</a>
+				</li>
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane active" id="xhtml">
+					<script src="https://gist.github.com/hatemalimam/6c647a878e810cb719ed.js"></script>
+				</div>
+				<div class="tab-pane fade" id="java">
+					<script src="https://gist.github.com/hatemalimam/7335cc9c66c107ed181d.js"></script>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

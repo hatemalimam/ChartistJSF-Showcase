@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ct="http://www.chartistjsf.org/charts"
+	xmlns:p="http://primefaces.org/ui" >
+
+	<div class="jumbotron">
+		<h2>BiPolar Chart</h2>
+		<h:form id="bipolarLineformId">
+			<ct:chart id="bipolarLineChart" styleClass="myClass" type="line" model="#{chartDataBean.biPolarlineModel}"
+				widgetVar="bipolarLineChartWV">
+				<p:ajax event="itemSelect" listener="#{chartDataBean.itemSelect}" update="bipolarLineChartMessage" />
+			</ct:chart>
+
+			<p:message id="bipolarLineChartMessage" for="bipolarLineChart" showDetail="true" />
+		</h:form>
+	</div>
+
+</ui:composition>

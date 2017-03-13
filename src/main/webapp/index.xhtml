@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ct="http://www.chartistjsf.org/charts"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/templates/vox/main.xhtml">
+
+	<ui:define name="intro">
+		<div class="intro">
+			<h:graphicImage library="vox" name="images/octo-guitar.gif" style="display:block;margin:auto;" />
+			<h2 class="text-center" style="color: rgba(255, 255, 255, 0.901961); padding-bottom: 30px;">Compose Charts</h2>
+		</div>
+	</ui:define>
+	<ui:define name="content">
+		<h:panelGroup id="mainSection">
+			<ui:include src="/charts/preview.xhtml" />
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:ct="http://www.chartistjsf.org/charts"
+	xmlns:p="http://primefaces.org/ui" xmlns:pretty="http://ocpsoft.com/prettyfaces">
+
+	<div class="jumbotron">
+		<pretty:link mappingId="pie" styleClass="btn-floating btn-large waves-effect waves-light pull-right"
+			rendered="#{preview}" title="How to Play">
+			<i class="mdi-hardware-gamepad"></i>
+		</pretty:link>
+		<h2>Pie Chart</h2>
+		<h:form id="pieFormId">
+			<ct:chart id="pieChart" type="pie" model="#{chartDataBean.pieChartModel}">
+				<p:ajax event="itemSelect" listener="#{chartDataBean.pieItemSelect}" update="pieChartMessage" />
+			</ct:chart>
+
+			<p:message id="pieChartMessage" for="pieChart" showDetail="true" />
+		</h:form>
+	</div>
+
+</ui:composition>
