@@ -21,5 +21,10 @@
 		<pattern value="/pie" />
 		<view-id value="/charts/pie/main.xhtml" />
 	</url-mapping>
+	
+	<url-mapping id="plugins">
+        <pattern value="/plugins" />
+        <view-id value="/charts/plugins/main.xhtml" />
+    </url-mapping>
 
 </pretty-config>

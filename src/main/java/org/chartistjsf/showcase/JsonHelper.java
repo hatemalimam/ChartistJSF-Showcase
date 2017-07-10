@@ -42,6 +42,8 @@ public class JsonHelper {
 
 		lineChartModel.setFullWidth(o.get("fullWidth") != null && o.get("fullWidth").getAsString().equals("on") ? true
 				: false);
+		lineChartModel.setShowGridBackground(o.get("showGridBackground") != null
+				&& o.get("showGridBackground").getAsString().equals("on") ? true : false);
 
 		lineChartModel.setAspectRatio(AspectRatio.valueOf(o.get("aspectRatio") != null ? o.get("aspectRatio")
 				.getAsString() : "GOLDEN_SECTION"));
@@ -70,6 +72,9 @@ public class JsonHelper {
 
 		barChartModel.setHorizontalBars(o.get("horizontalBars") != null
 				&& o.get("horizontalBars").getAsString().equals("on") ? true : false);
+		
+		barChartModel.setShowGridBackground(o.get("showGridBackground") != null
+				&& o.get("showGridBackground").getAsString().equals("on") ? true : false);
 
 		barChartModel.setAspectRatio(AspectRatio.valueOf(o.get("aspectRatio") != null ? o.get("aspectRatio")
 				.getAsString() : "GOLDEN_SECTION"));
@@ -86,7 +91,7 @@ public class JsonHelper {
 
 		pieChartModel.setShowLabel(o.get("showLabel") != null && o.get("showLabel").getAsString().equals("on") ? true
 				: false);
-		pieChartModel.setDonut(o.get("donut") != null && o.get("donut").getAsString().equals("on") ? true : false);		
+		pieChartModel.setDonut(o.get("donut") != null && o.get("donut").getAsString().equals("on") ? true : false);
 
 		if (pieChartModel.isDonut()) {
 			pieChartModel.setStartAngle(270);

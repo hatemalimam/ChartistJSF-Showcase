@@ -26,6 +26,7 @@
 		<h:outputStylesheet library="vox" name="css/normalize.css"></h:outputStylesheet>
 		<h:outputStylesheet library="vox" name="css/main.css"></h:outputStylesheet>
 		<h:outputScript library="vox" name="js/vendor/modernizr-2.8.3.min.js"></h:outputScript>
+		<h:outputScript library="vox" name="js/vendor/chartist-plugin-threshold.min.js"></h:outputScript>
 	</f:facet>
 </h:head>
 
@@ -53,6 +54,9 @@
 					<li class="">
 						<pretty:link mappingId="pie">Pie</pretty:link>
 					</li>
+					<li class="">
+                        <pretty:link mappingId="plugins">Plugins</pretty:link>
+                    </li>
 				</ul>
 
 				<ul class="right hide-on-med-and-down">
@@ -63,14 +67,14 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/hatemalimam/ChartistJSF">
+						<a href="https://github.com/hatemalimam/ChartistJSF" class="hide-on-small">
 							<i class="mdi-hardware-keyboard-alt"></i>
 							Contribute
 						</a>
 					</li>
 					<li>
 						<a
-							href="https://oss.sonatype.org/content/repositories/releases/org/chartistjsf/ChartistJSF/2.0/ChartistJSF-2.0.jar">
+							href="https://oss.sonatype.org/content/repositories/releases/org/chartistjsf/ChartistJSF/3.0/ChartistJSF-3.0.jar">
 							<i class="mdi-file-cloud-download"></i>
 							Download
 						</a>
@@ -107,13 +111,16 @@
 						<li>
 							<pretty:link mappingId="pie" styleClass="grey-text text-lighten-3">Pie</pretty:link>
 						</li>
+						<li>
+                            <pretty:link mappingId="plugins" styleClass="grey-text text-lighten-3">Plugins</pretty:link>
+                        </li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-copyright">
 			<div class="container">
-				© 2016 ChartistJSF - Version 2.0
+				© 2017 ChartistJSF - Version 3.0
 				<a class="grey-text text-lighten-4 right" href="http://www.apache.org/licenses/LICENSE-2.0">Licensed under the
 					Apache License, Version 2.0 (the "License")</a>
 			</div>

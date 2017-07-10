@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.chartistjsf.showcase</groupId>
 	<artifactId>chartistjsf-showcase</artifactId>
-	<version>2.0</version>
+	<version>3.0</version>
 	<packaging>war</packaging>
 	<name>ChartistJSFShowCase</name>
 
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>org.chartistjsf</groupId>
 			<artifactId>chartistjsf</artifactId>
-			<version>2.1</version>			
+			<version>3.0</version>			
 		</dependency>
 
 		<!-- Gson -->

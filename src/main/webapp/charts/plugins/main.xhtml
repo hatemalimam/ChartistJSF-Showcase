@@ -9,7 +9,7 @@
 					<div class="card-content">Responsive</div>
 					<h:form id="optionsForm">
 						<p:remoteCommand name="submitForm" actionListener="#{chartDataBean.lineCollectData}" process="@this"
-							update=":lineformId:lineChart"></p:remoteCommand>
+							update=":pluginsformId:lineChart"></p:remoteCommand>
 						<div class="card-action">
 							<div class="input-field col s12">
 								<select name="aspectRatio">
@@ -41,7 +41,7 @@
 								<label for="showTooltip">showTooltip</label>
 							</p>
 							<p>
-								<input name="animateAdvanced" type="checkbox" class="filled-in" id="animateAdvanced" checked="checked" />
+								<input name="animateAdvanced" type="checkbox" class="filled-in" id="animateAdvanced" />
 								<label for="animateAdvanced">animateAdvanced</label>
 							</p>
 							<p>
@@ -64,7 +64,7 @@
 							</p>
 
 							<p>
-								<input name="showArea" type="checkbox" class="filled-in" id="showArea" />
+								<input name="showArea" type="checkbox" class="filled-in" id="showArea" checked="checked" />
 								<label for="showArea">showArea</label>
 							</p>
 
@@ -76,17 +76,14 @@
 								<input name="fullWidth" type="checkbox" class="filled-in" id="fullWidth" />
 								<label for="fullWidth">fullWidth</label>
 							</p>
-							<p>
-								<input name="showGridBackground" type="checkbox" class="filled-in" id="showGridBackground" />
-								<label for="showGridBackground">showGridBackground</label>
-							</p>
+
 
 						</div>
 					</h:form>
 				</div>
 			</div>
 			<div class="col-md-9">
-				<ui:include src="line.xhtml" />
+				<ui:include src="plugins.xhtml" />
 			</div>
 		</div>
 
@@ -94,8 +91,11 @@
 		<div class="jumbotron">
 			<ul class="nav nav-tabs" data-tabs="tabs">
 				<li role="presentation" class="active">
-					<a href="#xhtml" data-toggle="tab">line.xhtml</a>
+					<a href="#xhtml" data-toggle="tab">plugins.xhtml</a>
 				</li>
+				<li role="presentation">
+                    <a href="#css" data-toggle="tab">plugins.css</a>
+                </li>
 				<li role="presentation">
 					<a href="#java" data-toggle="tab">ChartDataBean.java</a>
 				</li>
@@ -103,11 +103,14 @@
 
 			<div class="tab-content">
 				<div class="tab-pane active" id="xhtml">
-					<script src="https://gist.github.com/hatemalimam/965fd7e09eff996b5b39.js"></script>
+					<script src="https://gist.github.com/hatemalimam/4877bcef2fbcffa7a6f5e5f6796b8f52.js"></script>
+				</div>
+				<div class="tab-pane fade" id="css">
+					<script src="https://gist.github.com/hatemalimam/9a01b04fe867f894400e8a2a14835e29.js"></script>
 				</div>
 				<div class="tab-pane fade" id="java">
-					<script src="https://gist.github.com/hatemalimam/c6c25aee3954a25aae46.js"></script>
-				</div>
+                    <script src="https://gist.github.com/hatemalimam/bd5e251800c9656ae4720ad514e24d05.js"></script>
+                </div>
 			</div>
 		</div>
 	</ui:define>

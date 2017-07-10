@@ -189,12 +189,11 @@ textarea {
 	clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-@media only screen and (min-width: 35em) { /* Style adjustments for viewports that meet the condition */
+
+@media only screen and (max-width: 1200px) { /* Style adjustments for viewports that meet the condition */
+    .hide-on-small {
+        display:none;
+    }
 }
 
 @media print , ( -webkit-min-device-pixel-ratio : 1.25) , ( min-resolution : 120dpi) {
@@ -429,3 +428,66 @@ i.mdi-hardware-gamepad.right {
 	margin-top: -5px;
 }
 
+.example-plugin-threshold .ct-line {
+    stroke-dasharray: 5px;
+    animation: dashoffset 1s linear infinite;
+}
+
+.example-plugin-threshold.ct-chart .ct-series .ct-bar.ct-threshold-above,.example-plugin-threshold.ct-chart .ct-series .ct-line.ct-threshold-above,.example-plugin-threshold.ct-chart .ct-series .ct-point.ct-threshold-above {
+    stroke: #f05b4f;
+}
+
+.example-plugin-threshold.ct-chart .ct-series .ct-bar.ct-threshold-below,.example-plugin-threshold.ct-chart .ct-series .ct-line.ct-threshold-below,.example-plugin-threshold.ct-chart .ct-series .ct-point.ct-threshold-below {
+    stroke: #59922b;
+}
+
+.example-plugin-threshold.ct-chart .ct-series .ct-area.ct-threshold-above {
+    fill: #f05b4f;
+}
+
+.example-plugin-threshold.ct-chart .ct-series .ct-area.ct-threshold-below {
+    fill: #59922b;
+}
+
+@-webkit-keyframes dashoffset {
+    0% {
+        stroke-dashoffset: 0
+    }
+
+    100% {
+        stroke-dashoffset: -20px
+    }
+}
+
+@-moz-keyframes dashoffset {
+    0% {
+        stroke-dashoffset: 0
+    }
+
+    100% {
+        stroke-dashoffset: -20px
+    }
+}
+
+@-ms-keyframes dashoffset {
+    0% {
+        stroke-dashoffset: 0
+    }
+
+    100% {
+        stroke-dashoffset: -20px
+    }
+}
+
+@keyframes dashoffset {
+    0% {
+        stroke-dashoffset: 0
+    }
+
+    100% {
+        stroke-dashoffset: -20px
+    }
+}
+.ct-grids rect.ct-grid-background {
+  fill: #e4e4e4;
+}

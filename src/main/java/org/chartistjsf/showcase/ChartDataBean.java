@@ -36,6 +36,7 @@ public class ChartDataBean implements Serializable {
 	private LineChartModel biPolarlineModel;
 	private BarChartModel barChartModel;
 	private PieChartModel pieChartModel;
+	private LineChartModel pluginsModel;
 
 	public ChartDataBean() {
 		createCharts();
@@ -46,6 +47,7 @@ public class ChartDataBean implements Serializable {
 		createLineModel();
 		createPieChart();
 		createBiPolarLine();
+		createLinePluginsModel();
 	}
 
 	private void createBiPolarLine() {
@@ -178,43 +180,48 @@ public class ChartDataBean implements Serializable {
 		series3.set(random.nextInt(10));
 		series3.set(random.nextInt(10));
 		series3.set(random.nextInt(10));
-
-		LineChartSeries series4 = new LineChartSeries();
-		series4.setName("Series 4");
-
-		series4.set(random.nextInt(10));
-		series4.set(random.nextInt(10));
-		series4.set(random.nextInt(10));
-		series4.set(random.nextInt(10));
-		series4.set(random.nextInt(10));
-		series4.set(random.nextInt(10));
-		series4.set(random.nextInt(10));
-		series4.set(random.nextInt(10));
-
-		LineChartSeries series5 = new LineChartSeries();
-		series5.setName("Series 5");
-
-		series5.set(random.nextInt(10));
-		series5.set(random.nextInt(10));
-		series5.set(random.nextInt(10));
-		series5.set(random.nextInt(10));
-		series5.set(random.nextInt(10));
-		series5.set(random.nextInt(10));
-		series5.set(random.nextInt(10));
-		series5.set(random.nextInt(10));
-
+		
 		Axis xAxis = lineModel.getAxis(AxisType.X);
 		xAxis.setLabelInterpolationFnc("myLabelInterpolationFnc");
 		lineModel.addSeries(series1);
 		lineModel.addSeries(series2);
 		lineModel.addSeries(series3);
-		// lineModel.addSeries(series4);
-		// lineModel.addSeries(series5);
 		lineModel.setResponsiveOptions("myResponsiveOptions");
-		// lineModel.addSeries(series4);
 		lineModel.setAnimateAdvanced(true);
 		lineModel.setShowTooltip(true);
-		// lineModel.setAnimatePath(true);
+	}
+
+	public void createLinePluginsModel() {
+		Random random = new Random();
+		pluginsModel = new LineChartModel();
+		pluginsModel.setAspectRatio(AspectRatio.GOLDEN_SECTION);
+
+		pluginsModel.addLabel("1");
+		pluginsModel.addLabel("2");
+		pluginsModel.addLabel("3");
+		pluginsModel.addLabel("4");
+		pluginsModel.addLabel("5");
+		pluginsModel.addLabel("6");
+		pluginsModel.addLabel("7");
+		pluginsModel.addLabel("8");
+
+		LineChartSeries series1 = new LineChartSeries();
+		series1.setName("Series 1");
+
+		series1.set(random.nextInt(10));
+		series1.set(random.nextInt(10));
+		series1.set(random.nextInt(10));
+		series1.set(random.nextInt(10));
+		series1.set(random.nextInt(10));
+		series1.set(random.nextInt(10));
+		series1.set(random.nextInt(10));
+		series1.set(random.nextInt(10));
+
+		pluginsModel.addSeries(series1);
+		pluginsModel.setAnimateAdvanced(false);
+		pluginsModel.setShowTooltip(true);
+		pluginsModel.setAnimatePath(false);
+		pluginsModel.setShowArea(true);
 	}
 
 	public void createBarModel() {
@@ -343,6 +350,7 @@ public class ChartDataBean implements Serializable {
 		String optionsData = Faces.getRequestParameter("optionsData");
 		JsonHelper helper = new JsonHelper();
 		helper.updateLineData(optionsData, lineModel);
+		helper.updateLineData(optionsData, pluginsModel);
 	}
 
 	public void barCollectData() {
@@ -415,6 +423,14 @@ public class ChartDataBean implements Serializable {
 	 */
 	public void setBiPolarlineModel(LineChartModel biPolarlineModel) {
 		this.biPolarlineModel = biPolarlineModel;
+	}
+
+	public LineChartModel getPluginsModel() {
+		return pluginsModel;
+	}
+
+	public void setPluginsModel(LineChartModel pluginsModel) {
+		this.pluginsModel = pluginsModel;
 	}
 
 	public void itemSelect(ItemSelectEvent event) {
