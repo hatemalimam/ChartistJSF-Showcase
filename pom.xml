@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.chartistjsf.showcase</groupId>
 	<artifactId>chartistjsf-showcase</artifactId>
-	<version>3.0</version>
+	<version>3.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>ChartistJSFShowCase</name>
 
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>org.chartistjsf</groupId>
 			<artifactId>chartistjsf</artifactId>
-			<version>3.0</version>			
+			<version>3.0</version>
 		</dependency>
 
 		<!-- Gson -->
@@ -62,6 +62,14 @@
 			<artifactId>gson</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 
 	</dependencies>
 
