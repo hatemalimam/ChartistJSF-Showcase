@@ -51,9 +51,9 @@
 
 		<!-- chartistjsf -->
 		<dependency>
-			<groupId>org.chartistjsf</groupId>
-			<artifactId>chartistjsf</artifactId>
-			<version>3.0</version>			
+    			<groupId>org.chartistjsf</groupId>
+   			 <artifactId>ChartistJSF</artifactId>
+    			<version>3.0</version>
 		</dependency>
 
 		<!-- Gson -->
