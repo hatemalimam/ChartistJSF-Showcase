@@ -37,6 +37,7 @@ public class MainBean implements Serializable {
 	}
 
 	public static String getRequestParameter(String name) {
+		return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(name);
 	}
 
 	/**
