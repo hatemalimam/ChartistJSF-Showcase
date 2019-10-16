@@ -18,7 +18,6 @@ import org.chartistjsf.model.chart.ChartSeries;
 import org.chartistjsf.model.chart.LineChartModel;
 import org.chartistjsf.model.chart.LineChartSeries;
 import org.chartistjsf.model.chart.PieChartModel;
-import org.omnifaces.util.Faces;
 import org.primefaces.event.ItemSelectEvent;
 
 @ManagedBean
@@ -180,7 +179,7 @@ public class ChartDataBean implements Serializable {
 		series3.set(random.nextInt(10));
 		series3.set(random.nextInt(10));
 		series3.set(random.nextInt(10));
-		
+
 		Axis xAxis = lineModel.getAxis(AxisType.X);
 		xAxis.setLabelInterpolationFnc("myLabelInterpolationFnc");
 		lineModel.addSeries(series1);
@@ -347,22 +346,26 @@ public class ChartDataBean implements Serializable {
 	}
 
 	public void lineCollectData() {
-		String optionsData = Faces.getRequestParameter("optionsData");
+		String optionsData = getRequestParameter("optionsData");
 		JsonHelper helper = new JsonHelper();
 		helper.updateLineData(optionsData, lineModel);
 		helper.updateLineData(optionsData, pluginsModel);
 	}
 
 	public void barCollectData() {
-		String optionsData = Faces.getRequestParameter("optionsData");
+		String optionsData = getRequestParameter("optionsData");
 		JsonHelper helper = new JsonHelper();
 		helper.updateBarData(optionsData, barChartModel);
 	}
 
 	public void pieCollectData() {
-		String optionsData = Faces.getRequestParameter("optionsData");
+		String optionsData = getRequestParameter("optionsData");
 		JsonHelper helper = new JsonHelper();
 		helper.updatePieData(optionsData, pieChartModel);
+	}
+
+	public static String getRequestParameter(String name) {
+		return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(name);
 	}
 
 	/**

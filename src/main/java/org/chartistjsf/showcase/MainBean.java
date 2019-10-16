@@ -5,11 +5,12 @@ import java.io.UnsupportedEncodingException;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.omnifaces.util.Faces;
 import org.primefaces.util.Base64;
+
+import com.ocpsoft.shade.org.apache.commons.logging.Log;
+import com.ocpsoft.shade.org.apache.commons.logging.LogFactory;
 
 @ManagedBean
 @ViewScoped
@@ -29,10 +30,13 @@ public class MainBean implements Serializable {
 	 * */
 	public void updateSection() {
 		try {
-			currentSection = new String(Base64.decodeFast(Faces.getRequestParameter("currentSection")), "UTF-8");
+			currentSection = new String(Base64.decodeFast(getRequestParameter("currentSection")), "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			log.error("Application is broken, porka Vacca");
 		}
+	}
+
+	public static String getRequestParameter(String name) {
 	}
 
 	/**
